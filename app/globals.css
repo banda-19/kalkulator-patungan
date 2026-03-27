@@ -1,8 +1,15 @@
 @import "tailwindcss";
+@custom-variant dark (&:is(.dark *)); /* Baris ajaib agar tombol kita berfungsi */
 
 :root {
   --background: #ffffff;
   --foreground: #171717;
+}
+
+/* Mengubah variabel warna dasar saat class .dark aktif */
+.dark {
+  --background: #111827; /* Warna abu-abu gelap khas mode malam */
+  --foreground: #ededed;
 }
 
 @theme inline {
@@ -10,13 +17,6 @@
   --color-foreground: var(--foreground);
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
 }
 
 body {
